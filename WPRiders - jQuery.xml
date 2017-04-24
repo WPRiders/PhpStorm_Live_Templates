@@ -1,0 +1,713 @@
+<templateSet group="WPRiders - jQuery">
+  <template name="jqAjax" value="$.ajax({&#10;    type: &quot;$METHOD$&quot;,&#10;    url: $URL$,&#10;    data: {action: &quot;$DATA$&quot;}, &#10;    dataType: &quot;$DATATYPE$&quot;, // xml, html, script, json, jsonp, text&#10;    success: function (data) {&#10;        $END$&#10;    },&#10;    error: function(jqXHR, textStatus, errorThrown){&#10;    &#10;    },&#10;    // called when the request finishes (after success and error callbacks are executed)&#10;    complete: function(jqXHR, textStatus){&#10;    &#10;    }&#10;});" description="jQuery Ajax snippet" toReformat="true" toShortenFQNames="true">
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="URL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DATA" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DATATYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOn" value="$($PARENT_SELECTOR$).on(&quot;$EVENTS$&quot;,&quot;$ELEMENT$&quot;, function (e) {&#10;    $END$&#10;});" description="jQuery On method" toReformat="true" toShortenFQNames="true">
+    <variable name="PARENT_SELECTOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EVENTS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ELEMENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqSubmit" value="$($SELECTOR$).submit(function (e) { &#10;    e.preventDefault();&#10;    $END$&#10;});" description="jQuery submit prevent default" toReformat="true" toShortenFQNames="true">
+    <variable name="SELECTOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAppend" value="$($selector$).append($content$);" description="jQuery Append" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAppendTo" value="$($content$).appendTo($selector$);" description="jQuery append to" toReformat="true" toShortenFQNames="true">
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAttrGet" value="$($selector$).attr(&quot;$attributeName$&quot;);" description="jQUery Get element attribute" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="attributeName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAttrRemove" value="$($selector$).removeAttr(&quot;$attributeName$&quot;);" description="jQuery remove element attribute" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="attributeName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAttrAdd" value="$($selector$).attr(&quot;$attributeName$&quot;, $value$);" description="jQuery element add attribute" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="attributeName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAttrSetFn" value="$($selector$).attr(&quot;$attributeName$&quot;, function (index, attr) { &#10;     $END$&#10;});" description="jQuery Add function to attribute" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="attributeName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAttrSetObj" value="$($selector$).attr({&#10;    $name$: &quot;$value$&quot;$END$&#10;    &#10;});" description="jQuery Set element attribute object" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAfter" value="$($selector$).after($content$);" description="jQuery insert after" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqBefore" value="$($selector$).before($content$);" description="jQuery insert before" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqBlur" value="$($selector$).blur(function (e) { &#10;        e.preventDefault();&#10;        $END$&#10;    });" description="Bind an event handler to the &quot;blur&quot; JavaScript event, or trigger that event on an element." toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqChange" value="$($selector$).change(function (e) { &#10;    e.preventDefault();&#10;    $END$&#10;});" description="jQuery on Change" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqClassAdd" value="$($selector$).addClass(&quot;$className$&quot;);" description="jQuery add css class" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqClassRemove" value="$($selector$).removeClass(&quot;$className$&quot;);" description="Remove specific class form element" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqClassToggle" value="$($selector$).toggleClass(&quot;$className$&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqClassToggleSwitch" value="$($selector$).toggleClass(&quot;$className$&quot;, &quot;$switch$&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="switch" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqHasClass" value="if($($selector$).hasClass(&quot;$className$&quot;)){&#10;    $END$&#10;}" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqClone" value="$($selector$).clone();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqCloneWithEvents" value="$($selector$).clone(true);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqCssGet" value="$($selector$).css(&quot;$propertyName$&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="propertyName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqCssSet" value="$($selector$).css(&quot;$propertyName$&quot;, &quot;$value$&quot;);" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="propertyName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqCssSetObj" value="$($selector$).css({&#10;    &quot;$propertyName$&quot;: &quot;$value$&quot;$END$&#10;    &#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="propertyName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqDataGet" value="$($selector$).data(&quot;$key$&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqDataSet" value="$($selector$).data(&quot;$key$&quot;, &quot;$value$&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqDataRemove" value="$($selector$).removeData(&quot;$element$&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="element" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqDataSetObj" value="$($selector$).data({&#10;    &quot;$key$&quot;: &quot;$value$&quot;$END$&#10;    &#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOff" value="$( &quot;$SELECTOR$&quot; ).off();" description="Remove all event handlers from all paragraphs" toReformat="true" toShortenFQNames="true">
+    <variable name="SELECTOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqDocReady" value="(function ($) {&#10;    $END$&#10;})(jQuery);" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqEach" value="$.each($collection$, function ($indexInArray$, $valueOfElement$) { &#10;     $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="collection" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="indexInArray" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="valueOfElement" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqEachElement" value="$($selector$).each(function (index, element) {&#10;    // element == this&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqFadeIn" value="$($selector$).fadeIn($SPEED$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SPEED" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqFadeInAndCallback" value="$($selector$).fadeIn($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqFadeOut" value="$($selector$).fadeOut($duration$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqFadeOutAndCallback" value="$($selector$).fadeOut($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqFadeTo" value="$($selector$).fadeTo($duration$, $opacity$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="opacity" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="FadeToAndCallback" value="$($selector$).fadeTo($duration$, $opacity$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="opacity" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqWrap" value="$($selector$).wrap(&quot;&lt;$wrappingElement$&gt;&lt;/$wrappingElement$&gt;&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="wrappingElement" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqWrapAll" value="$($selector$).wrapAll(&quot;&lt;$wrappingElement$&gt;&lt;/$wrappingElement$&gt;&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="wrappingElement" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqWrapInner" value="$($selector$).wrapInner(&quot;&lt;$wrappingElement$&gt;&lt;/$wrappingElement$&gt;&quot;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="wrappingElement" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqValGet" value="$($selector$).val();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqValSet" value="$($selector$).val($value$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqTriggerHandlerWidthData" value="$($selector$).triggerHandler($eventType$, { $name$: $value$ });" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="eventType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqTriggerHandler" value="$($selector$).triggerHandler($eventType$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="eventType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqTrigger" value="$($selector$).trigger($eventType$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="eventType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqTriggerWithData" value="$($selector$).trigger($eventType$, { $name$: $value$ });" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="eventType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqResize" value="$($selector$).resize(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqReplaceWith" value="$($selector$).replaceWith($newContent$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="newContent" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqReplaceAll" value="$($selector$).replaceAll($target$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="target" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqRemove" value="$($selector$).remove();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqRemoveExpr" value="$($selector$).remove($expression$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqPost" value="$.post(&quot;$url$&quot;, data,&#10;    function (data, textStatus, jqXHR) {&#10;        $END$&#10;    },&#10;    &quot;$dataType$&quot; // xml, html, script, json, jsonp, text&#10;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="dataType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqPosition" value="var position = $($selector$).position();&#10;var top = position.top;&#10;var left = position.left;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqGet" value="$.get(&quot;$url$&quot;, data,&#10;    function (data, textStatus, jqXHR) {&#10;        $END$&#10;    },&#10;    &quot;$dataType$&quot; // xml, html, script, json, jsonp, text&#10;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="dataType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqGetJSON" value="$.getJSON(&quot;$url$&quot;, data,&#10;    function (data, textStatus, jqXHR) {&#10;        $END$&#10;    }&#10;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqPlugin" value="(function ($) {&#10;    jQuery.fn.$pluginname$ = function (settings) {&#10;        var config = {&#10;            'foo': 'bar'&#10;        };&#10; &#10;        if (settings) jQuery.extend(config, settings);&#10; &#10;        this.each(function () {&#10;            // element-specific code here&#10;            $END$&#10;        });&#10; &#10;        return this;&#10;    };&#10;})(jQuery);" description="jQuery Plugin Template" toReformat="true" toShortenFQNames="true">
+    <variable name="pluginname" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqGetScript" value="$.getScript(&quot;$url$&quot;, function (script, textStatus, jqXHR) {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqNamesSpace" value="(function ( name, $, undefined ) {&#10;    // Private Property&#10;    myPrivateProperty = &quot;Private Property&quot;;&#10;        &#10;    // Public Property&#10;    name.myPublicProperty = &quot;Publically Accessible Property&quot;;&#10;        &#10;    // Private Method&#10;    function myPrivateMethod () {&#10;        $END$&#10;    }&#10;        &#10;    // Public Method&#10;    name.myPublicMethod = function () {&#10;        &#10;    };  &#10;}(window.name = window.name || {}, jQuery ));" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqLoadGet" value="$($selector$).load(&quot;$url$&quot;, &quot;data&quot;, function (response, status, request) {&#10;    this; // dom element&#10;    $END$&#10;});" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqLoadPost" value="$($selector$).load(&quot;$url$&quot;, &quot;data&quot;, function (response, status, request) {&#10;    this; // dom element&#10;    $END$&#10;});" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMap" value="$.map($arrayOrObject$, function ($elementOrValue$, $indexOrKey$) {&#10;    &#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="arrayOrObject" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="elementOrValue" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="indexOrKey" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOffsetParent" value="var offset = $($selector$).offsetParent();&#10;var top = offset.top;&#10;var left = offset.left;&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOffsetGet" value="var offset = $($selector$).offset();&#10;var top = offset.top;&#10;var left = offset.left;&#10;" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseDown" value="$($selector$).mousedown(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseUp" value="$($selector$).mouseup(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseEnter" value="$($selector$).mouseenter(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseLeave" value="$($selector$).mouseleave(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseMove" value="$($selector$).mouseleave(function () { &#10;    // values: e.clientX, e.clientY, e.pageX, e.pageY&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseOut" value="$($selector$).mouseout(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqMouseOver" value="$($selector$).mouseover(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOne" value="$($selector$).one($events$, function (e) {&#10;    $END$&#10;});" description="Attach a handler to an event for the elements. The handler is executed at most once per element per event type." toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="events" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOneWithData" value="$($selector$).one($events$, data, function (e) {&#10;    $END$&#10;});" description="data: An object containing data that will be passed to the event handler." toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="events" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqKeyUp" value="$($selector$).keyup(function (e) { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqKeyDown" value="$($selector$).keydown(function (e) { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqKeyPress" value="$($selector$).keypress(function (e) { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqScroll" value="$($selector$).scroll(function () { &#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqScrollLeftGet" value="$($selector$).scrollLeft();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqScrollLeftSet" value="$($selector$).scrollLeft($value$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqScrollTopGet" value="$($selector$).scrollTop();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqScrollTopSet" value="$($selector$).scrollTop($value$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqHideCallback" value="$($selector$).hide($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqShowCallback" value="$($selector$).show($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqSlideDownCallback" value="$($selector$).slideDown($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqSlideUpCallback" value="$($selector$).slideUp($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqSlideToggleCallback" value="$($selector$).slideToggle($duration$, function () {&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="duration" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqFocus" value="$($selector$).focus(function (e) { &#10;    e.preventDefault();&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqHover" value="$($selector$).hover(function () {&#10;        // over&#10;        $END$&#10;    }, function () {&#10;        // out&#10;    }&#10;);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOuterHeight" value="$($selector$).outerHeight($includeMargin$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="includeMargin" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqInnerHeight" value="$($selector$).innerHeight();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqOuterWidth" value="$($selector$).outerWidth($includeMargin$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="includeMargin" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqInnerWidth" value="$($selector$).innerWidth();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqWidthGet" value="$($selector$).width();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqHeightGet" value="$($selector$).height();" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqHeightSet" value="$($selector$).height($value$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqWidthSet" value="$($selector$).width($value$);" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqClick" value="$($selector$).click(function (e) { &#10;    e.preventDefault();&#10;    $END$&#10;});" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqContains" value="$( &quot;$selector$:contains('$contains$')&quot; )" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="contains" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxComplete" value="$( document ).ajaxComplete(function( event, xhr, settings ) {&#10;    // settings.url == something you need &#10;    // xhr.responseText response text&#10;  $END$&#10;});" description="Register a handler to be called when Ajax requests complete." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxError" value="$( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {&#10;    // settings.url == something you need &#10;  $END$&#10;});" description="Register a handler to be called when Ajax requests complete with an error." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxSend" value="$( document ).ajaxSend(function( event, jqxhr, settings ) {&#10;    // settings.url == something you need &#10;  $END$&#10;});" description="Attach a function to be executed before an Ajax request is sent." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxStart" value="$( document ).ajaxStart(function() {&#10;  $END$&#10;});" description="Register a handler to be called when the first Ajax request begins" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxStop" value="$( document ).ajaxStop(function() {&#10;  $END$&#10;});" description="Register a handler to be called when all Ajax requests have completed." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxSuccess" value="$( document ).ajaxSuccess(function( event, xhr, settings ) {&#10;    // settings.url == something you need &#10;    // xhr.responseText response text&#10;    $END$&#10;});" description="Attach a function to be executed whenever an Ajax request completes successfully." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqLengthGet" value="$( $selector$ ).length" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="selector" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxProfiler" value="$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {&#10;  // Modify options, control originalOptions, store jqXHR, etc&#10;  $END$&#10;});" description="Handle custom Ajax options or modify existing options before each request is sent and before they are processed by $.ajax()" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jqAjaxTransport" value="// DataType can be for example GET, image, script&#10;// options are the request options&#10;// originalOptions are the options as provided to the $.ajax() method, unmodified and, thus, without defaults from ajaxSettings&#10;// jqXHR is the jqXHR object of the request&#10;// headers is an object of (key-value) request headers that the transport can transmit if it supports it&#10;// completeCallback is the callback used to notify Ajax of the completion of the request&#10;&#10;$.ajaxTransport( $dataType$, function( options, originalOptions, jqXHR ) {&#10;  if( /* transportCanHandleRequest */ ) {&#10;    return {&#10;      send: function( headers, completeCallback ) {&#10;        // Send code&#10;      },&#10;      abort: function() {&#10;        // Abort code&#10;      }&#10;    };&#10;  }&#10;});" description="Creates an object that handles the actual transmission of Ajax data." toReformat="true" toShortenFQNames="true">
+    <variable name="dataType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>
