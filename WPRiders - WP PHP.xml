@@ -1,0 +1,76 @@
+<templateSet group="WPRiders - WP PHP">
+  <template name="wprAjaxActionFN" value="add_action( &quot;wp_ajax_nopriv_$ajax_action_acept$&quot;, &quot;$php_parsing_function$&quot; );&#10;add_action( &quot;wp_ajax_$ajax_action_acept$&quot;, &quot;$php_parsing_function$&quot; );&#10;&#10;function $php_parsing_function$(){&#10;    $response = array();&#10;    $END$&#10;    &#10;    wp_send_json( $response )&#10;}" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="ajax_action_acept" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="php_parsing_function" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprClassSimple" value="class $Name${&#10;    &#10;    function __construct(){&#10;        $END$&#10;    }    &#10;}" description="Create simple class" toReformat="true" toShortenFQNames="true">
+    <variable name="Name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprPluginHeader" value="/*&#10;Plugin Name: $pluginName$&#10;Plugin URI: $pluginURL$&#10;Description: $pluginDescription$&#10;Version: 1.0.0&#10;Author: $pluginAuthor$&#10;Author URI: $pluginAuthorUrl$&#10;Text Domain: $textDomain$&#10;Domain Path: /languages&#10;*/&#10;&#10;$END$" description="Insert the required Plugin Header" toReformat="true" toShortenFQNames="true">
+    <variable name="pluginName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pluginURL" expression="" defaultValue="&quot;http://www.wpriders.com/&quot;" alwaysStopAt="true" />
+    <variable name="pluginDescription" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pluginAuthor" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pluginAuthorUrl" expression="" defaultValue="&quot;http://www.wpriders.com/&quot;" alwaysStopAt="true" />
+    <variable name="textDomain" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprWP_Query" value="$query_args$ = array(&#10;&#9;&#9;'paged'          =&gt; 1,&#10;&#9;&#9;'posts_per_page' =&gt; $perPage$,&#10;&#9;&#9;'post_type'      =&gt; array( 'post'),&#10;&#9;&#9;'post_status'    =&gt; 'publish'&#10;&#9;);&#10;&#10;$posts$ = new WP_Query( $query_args$ );&#10;&#10;if ( $posts$-&gt;have_posts() ) {&#10;    while ( $posts$-&gt;have_posts() ) {&#10;    $posts$-&gt;the_post();&#10;        // Loop code here&#10;        $END$&#10;    }&#10;    wp_reset_postdata();&#10;}" description="Basic WP_Query code" toReformat="true" toShortenFQNames="true">
+    <variable name="query_args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="perPage" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="posts" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprPluginRestrict" value="if ( ! defined( 'ABSPATH' ) ) {&#10;&#9;header( 'Status: 403 Forbidden' );&#10;&#9;header( 'HTTP/1.1 403 Forbidden' );&#10;&#9;exit;&#10;}" description="Restrict direct access to this file" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprPluginDefinePaths" value="// Usage $urlPathCon$ . &quot;some_image.png&quot; from plugin folder&#10;define( '$urlPathCon$', plugins_url() . &quot;/&quot; . dirname( plugin_basename( __FILE__ ) ).'/' );&#10;&#10;// Usage require_once $absPathCon$ . &quot;some_plugin_file.php&quot;; from plugin folder&#10;define( '$absPathCon$', plugin_dir_path( __FILE__ ) );&#10;&#10;$END$" description="Define Constant values for plugin file path and url path" toReformat="true" toShortenFQNames="true">
+    <variable name="urlPathCon" expression="capitalizeAndUnderscore(String)" defaultValue="&quot;WPR_PATH_URL&quot;" alwaysStopAt="true" />
+    <variable name="absPathCon" expression="capitalizeAndUnderscore(String)" defaultValue="&quot;WPR_PATH_FILE&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprShortcodeNoContent" value="function $shortcodeMethod$( $atts ) {&#10;    // Helpers:&#10;    // $theme_path = get_template_directory();&#10;    // $theme_path_url = get_template_directory_uri();&#10;    &#10;    $result = &quot;&quot;;&#10;    &#10;&#9;// Attributes&#10;&#9;$atts = shortcode_atts(&#10;&#9;&#9;array(&#10;&#9;&#9;&#9;'text'          =&gt; '',&#10;&#9;&#9;&#9;'color'         =&gt; '#2f2f30',&#10;&#9;&#9;),&#10;&#9;&#9;$atts&#10;&#9;);&#10;&#9;&#10;    $END$&#10;    &#10;&#9;return $result;&#10;}&#10;&#10;add_shortcode( '$shortcode_name$', '$shortcodeMethod$' );" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="shortcodeMethod" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="shortcode_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+    </context>
+  </template>
+  <template name="wprGet_Post_Meta" value="$VAR_NAME$ = get_post_meta( $POST_ID$, '$META_KEY$', true );&#10;if ( ! empty( $VAR_NAME$  ) ) {&#10;&#9;// It has a value&#10;&#9;$END$&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="POST_ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="META_KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprPrintR" value="echo '&lt;pre&gt;';&#10;print_r($variable$);&#10;echo '&lt;/pre&gt;';&#10;die();" description="Print_r" toReformat="false" toShortenFQNames="true">
+    <variable name="variable" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprAddFilter" value="add_filter('$wheretoapply$','$namethefunction$');&#10;&#10;function $namethefunction$($atts$){&#10;$END$&#10;}" description="Add filter code and function" toReformat="false" toShortenFQNames="true">
+    <variable name="wheretoapply" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="namethefunction" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="atts" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

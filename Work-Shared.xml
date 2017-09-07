@@ -1,0 +1,7 @@
+<templateSet group="Work-Shared">
+  <template name="jsParalaxSimple" value="    //This needs to be in document ready&#10;    &#10;    //Cache the window object&#10;    var $window = $(window);&#10;&#10;    //Paralax background effect&#10;    $('section[data-type=&quot;background&quot;]').each(function(){&#10;&#10;        var $bgobj = $(this); //assigning the object&#10;&#10;        $window.scroll(function(){&#10;           //scroll the background at var speed&#10;            //the yPos is a negative value because we're scrolling it UP!&#10;&#10;            var yPos = -($window.scrollTop() / $bgobj.data('speed'));&#10;&#10;            //Put togheter our final background position&#10;            var coords = '50% ' + yPos + 'px';&#10;&#10;            //Move the background&#10;            $bgobj.css({backgroundPosition: coords});&#10;        }); //end window scroll&#10;    });" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>
