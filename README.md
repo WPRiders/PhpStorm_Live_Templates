@@ -12,5 +12,8 @@ Still gathering some of the most used code snippets. I will add the file as soon
 On OS X El Capitan  the XML files can be found at the following path <br/>
 **/Users/<your_user>/Library/Preferences/PhpStorm<version_number>/templates/**
 
+Big Sur macOS path <br/>
+**/Users/<your_user>/Library/Application Support/JetBrains/** and look for the PHPstorm version you are currently using ( folder example "PhpStorm2021.2/templates/" )
+
 ##### You are welcome to contribute to the list with any Live Templates
 ##### PHP,jQuery, HTML, CSS, SCSS and so on :) 
