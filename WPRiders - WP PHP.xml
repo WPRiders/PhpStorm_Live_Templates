@@ -1,5 +1,5 @@
 <templateSet group="WPRiders - WP PHP">
-  <template name="wprAjaxActionFN" value="add_action( &quot;wp_ajax_nopriv_$ajax_action_acept$&quot;, &quot;$php_parsing_function$&quot; );&#10;add_action( &quot;wp_ajax_$ajax_action_acept$&quot;, &quot;$php_parsing_function$&quot; );&#10;&#10;function $php_parsing_function$(){&#10;    $response = array();&#10;    $END$&#10;    &#10;    wp_send_json( $response )&#10;}" description="" toReformat="true" toShortenFQNames="true">
+  <template name="wprAjaxActionFN" value="add_action( 'wp_ajax_nopriv_$ajax_action_acept$', '$php_parsing_function$' );&#10;add_action( 'wp_ajax_$ajax_action_acept$', '$php_parsing_function$' );&#10;&#10;function $php_parsing_function$(){&#10;    $response = array();&#10;    $END$&#10;    &#10;    wp_send_json( $response );&#10;}" description="" toReformat="true" toShortenFQNames="true">
     <variable name="ajax_action_acept" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="php_parsing_function" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -12,13 +12,14 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="wprPluginHeader" value="/*&#10;Plugin Name: $pluginName$&#10;Plugin URI: $pluginURL$&#10;Description: $pluginDescription$&#10;Version: 1.0.0&#10;Author: $pluginAuthor$&#10;Author URI: $pluginAuthorUrl$&#10;Text Domain: $textDomain$&#10;Domain Path: /languages&#10;*/&#10;&#10;$END$" description="Insert the required Plugin Header" toReformat="true" toShortenFQNames="true">
+  <template name="wprPluginHeader" value="/**&#10; * $pluginName$&#10; *&#10; * @package     $pluginPackage$&#10; * @author      $authorName$&#10; * @copyright   $date$ $client_name$&#10; * @license     GPL-2.0+&#10; *&#10; * @wordpress-plugin&#10; * Plugin Name: $pluginName$&#10; * Plugin URI:  https://www.wpriders.com/hire-us&#10; * Description: $pluginDescription$&#10; * Version:     1.0.0&#10; * Author:      $authorName$ from WPRiders&#10; * Author URI:  https://www.wpriders.com/hire-us&#10; * Text Domain: $plugin_lang$&#10; * License:     GPL-2.0+&#10; * License URI: http://www.gnu.org/licenses/gpl-2.0.txt&#10; */&#10; &#10; $END$" description="Insert the required Plugin Header" toReformat="true" toShortenFQNames="true">
     <variable name="pluginName" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="pluginURL" expression="" defaultValue="&quot;http://www.wpriders.com/&quot;" alwaysStopAt="true" />
     <variable name="pluginDescription" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="pluginAuthor" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="pluginAuthorUrl" expression="" defaultValue="&quot;http://www.wpriders.com/&quot;" alwaysStopAt="true" />
-    <variable name="textDomain" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pluginPackage" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="authorName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="date" expression="date(&quot;Y&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="client_name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="plugin_lang" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="PHP" value="true" />
     </context>
@@ -69,6 +70,61 @@
     <variable name="wheretoapply" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="namethefunction" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="atts" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="DebugLog" value="define('WP_DEBUG',         true);  // Turn debugging ON&#10;define('WP_DEBUG_DISPLAY', false); // Turn forced display OFF&#10;define('WP_DEBUG_LOG',     true);  // Turn logging to wp-content/debug.log ON" description="Add to wp-config.php" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wphome" value="define( 'WP_SITEURL', '$SET_URL$' );&#10;define( 'WP_HOME', '$SET_URL$' );&#10;&#10;$END$" description="Add home path and site path" toReformat="true" toShortenFQNames="true">
+    <variable name="SET_URL" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wp_script_enqueue" value="wp_enqueue_script( $handle$, $src$, $dependencies$, $VERSION$, $FOOTER$ );&#10;$END$" description="Enqueue script" toReformat="true" toShortenFQNames="true">
+    <variable name="handle" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="src" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="dependencies" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VERSION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FOOTER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wp_style_enqueue" value="wp_enqueue_style( $handle$, $src$, $deps$, $version$, $media$ );" description="Enqueue WordPress style" toReformat="true" toShortenFQNames="true">
+    <variable name="handle" expression="" defaultValue="slug" alwaysStopAt="true" />
+    <variable name="src" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="deps" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="version" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="media" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wpr-translators" value="/* translators: describe_variables_with_comma_as_separator */" description="Translators string helper for i18n WP" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="wprVarDump" value="echo '&lt;pre&gt;';&#10;var_dump($variable$);&#10;echo '&lt;/pre&gt;';&#10;die();" shortcut="TAB" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="variable" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="export_log" value="error_log( '$STRING_MESSAGE$: ' . var_export( $VARIABLE_NAME$, true ) );$END$" description="error log and var export" toReformat="true" toShortenFQNames="true">
+    <variable name="STRING_MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARIABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="memorywp" value="define('WP_MEMORY_LIMIT', '$NUMBER$M');" description="Change how much memory is assigned to WrodPRess" toReformat="false" toShortenFQNames="true">
+    <variable name="NUMBER" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="PHP" value="true" />
     </context>
